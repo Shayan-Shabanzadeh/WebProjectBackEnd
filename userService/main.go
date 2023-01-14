@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"userService/controller"
 	"userService/initializers"
 )
 
@@ -12,8 +13,9 @@ func init() {
 }
 
 func main() {
+
 	r := gin.Default()
-	r.POST("/signup", nil)
+	r.POST("/signup", controller.Signup)
 	r.POST("/login", nil)
 	r.POST("/refresh", nil)
 	r.Run()
