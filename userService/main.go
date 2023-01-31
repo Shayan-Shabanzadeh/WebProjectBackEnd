@@ -16,7 +16,7 @@ func main() {
 
 	r := gin.Default()
 	r.POST("/signup", controller.Signup)
-	r.POST("/login", nil)
+	r.POST("/login", controller.Signin)
 	r.POST("/refresh", nil)
 	r.Run()
 }
