@@ -12,9 +12,7 @@ class TicketRepository {
                 return null;
             } else {
                 return new TicketDto({
-                    id: result.id,
-                    name: result.name,
-                    price: result.price,
+                    id: result.id, name: result.name, price: result.price,
                 });
             }
         } catch (err) {
@@ -26,17 +24,8 @@ class TicketRepository {
         try {
             const result = await Ticket.findAll({
                 where: {
-                    [Op.eq]: [
-                        {flightMode: flightMode},
-                        {origin: origin},
-                        {destination: destination},
-                        {startDate: startDate},
-                        {finishDate: finishDate},
-                        {flightType: flightType}
-                    ],
-                    [Op.gte]: [
-                        {PassengerNumber: PassengerNumber},
-                    ],
+                    [Op.eq]: [{flightMode: flightMode}, {origin: origin}, {destination: destination}, {startDate: startDate}, {finishDate: finishDate}, {flightType: flightType}],
+                    [Op.gte]: [{PassengerNumber: PassengerNumber},],
                 }
             });
             if (result === null) {
@@ -59,6 +48,23 @@ class TicketRepository {
             throw err;
         }
     };
+    decreaseFlightCapacity = async (id, purchasedCapacity) => {
+        try {
+            const result = await Ticket.findOne({where: {id: id}});
+            if (result === null) {
+                return null;
+            } else {
+                let capacity = result.PassengerNumber - purchasedCapacity
+                await Ticket.update({PassengerNumber: capacity}, {
+                    where: {
+                        id: id
+                    }
+                });
+            }
+        } catch (e) {
+            throw e;
+        }
+    }
 }
 
 module.exports = new TicketRepository();
