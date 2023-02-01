@@ -55,11 +55,19 @@ class TicketRepository {
                 return null;
             } else {
                 let capacity = result.PassengerNumber - purchasedCapacity
-                await Ticket.update({PassengerNumber: capacity}, {
-                    where: {
-                        id: id
-                    }
-                });
+                if (capacity === 0) {
+                    await Ticket.destroy({
+                        where: {
+                            id: id
+                        }
+                    });
+                } else {
+                    await Ticket.update({PassengerNumber: capacity}, {
+                        where: {
+                            id: id
+                        }
+                    });
+                }
             }
         } catch (e) {
             throw e;
