@@ -4,7 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const Sequelize = require("sequelize");
-const ticketRouter = require("./controller/ticketController");
+const PurchaseRouter = require("./controller/PurchaseController");
 const models = require("./models");
 const logger = require("./utils/Logger");
 
@@ -62,7 +62,7 @@ const initApp = () => {
   });
 
   //routers
-  app.use("/ticket", ticketRouter);
+  app.use("/purchase", PurchaseRouter);
   //error handler
   app.use((req, res, next) => {
     const error = new Error("Not found");
