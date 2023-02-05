@@ -1,7 +1,6 @@
-const { Purchase } = require("../models");
+const { Purchase } = require("../entity/entities");
 const logger = require("../utils/Logger");
 const PurchaseDto = require("../dto/PurchaseDto");
-const { Op } = require("sequelize");
 
 class PurchaseRepository {
   findPurchaseById = async (corresponding_user_id) => {

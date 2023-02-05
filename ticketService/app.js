@@ -3,35 +3,13 @@ const dotenv = require("dotenv");
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const Sequelize = require("sequelize");
 const PurchaseRouter = require("./controller/PurchaseController");
-const models = require("./models");
 const logger = require("./utils/Logger");
+const { init_db } = require("./entity/entities");
 
 dotenv.config();
 const port = process.env.PORT || 9000;
 const app = express();
-var sequelize = undefined;
-
-const initDatabase = async () => {
-  models.sequelize
-    .authenticate()
-    .then(() => {
-      logger.info("Connection has been established successfully.");
-    })
-    .catch((error) => {
-      console.error("Unable to connect to the database: ", error);
-      return;
-    });
-
-  try {
-    await models.sequelize.sync();
-    logger.info("All tables has been created successfully.");
-    return models.sequelize;
-  } catch (error) {
-    logger.error("Unable to connect to the database: ", error);
-  }
-};
 
 const initApp = () => {
   //login middleware
@@ -89,7 +67,7 @@ const initApp = () => {
 };
 
 const createServer = () => {
-  sequelize = initDatabase();
+  init_db();
   initApp();
   const server = http.createServer(app);
   server.listen(port);
@@ -98,4 +76,4 @@ const createServer = () => {
 
 createServer();
 
-exports = { sequelize, logger };
+exports = {logger };
