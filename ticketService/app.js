@@ -8,8 +8,9 @@ const AircraftRouter = require("./controller/AircraftController");
 const AircraftTypeRouter = require("./controller/AircraftTypeController");
 const AirportRouter = require("./controller/AirportController");
 const AircraftLayoutController = require('./controller/aircraftLayoutController')
+const FlightController = require('./controller/FlightController')
 const logger = require("./utils/Logger");
-const {init_db} = require("./entity/entities");
+const {init_db, Flight} = require("./entity/entities");
 
 dotenv.config();
 const port = process.env.PORT || 9000;
@@ -50,6 +51,7 @@ const initApp = () => {
     app.use("/aircraft_type", AircraftTypeRouter);
     app.use('/aircraftLayout', AircraftLayoutController);
     app.use('/airport', AirportRouter);
+    app.use('/flight', FlightController);
 
     //error handler
     app.use((req, res, next) => {
