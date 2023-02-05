@@ -266,6 +266,8 @@ AircraftType.hasMany(AircraftLayout, {
     foreignKey: {name: "type_id", allowNull: false},
 });
 
+AirCraft.hasMany(AircraftLayout, {
+
 AircraftLayout.hasMany(AirCraft, {
     foreignKey: {name: "layout_id", allowNull: false},
 });
