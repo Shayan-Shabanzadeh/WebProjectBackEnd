@@ -1,6 +1,6 @@
 const {AircraftType} = require("../entity/entities");
 const logger = require("../utils/Logger");
-const AircraftType = require("../dto/AircraftTypeDto");
+const AircraftTypeDto = require("../dto/AircraftTypeDto");
 
 class AircraftTypeRepository {
     findAircraftTypeById = async (type_id) => {
@@ -11,7 +11,7 @@ class AircraftTypeRepository {
             if (result === null) {
                 return null;
             } else {
-                return new AircraftType({
+                return new AircraftTypeDto({
                     type_id: result.type_id,
                     manufacturer: result.manufacturer,
                     model: result.model,
