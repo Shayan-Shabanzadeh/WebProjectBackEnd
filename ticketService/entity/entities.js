@@ -242,33 +242,61 @@ const Purchase = sequelize.define(
     }
 );
 
-Country.hasMany(Airport, {
+//https://sebhastian.com/sequelize-foreign-key/
+// todo check it
+Airport.hasOne(Country, {
     foreignKey: {name: "country_name", allowNull: false},
 });
 
-City.hasMany(Airport, {
+Airport.hasOne(City, {
     foreignKey: {name: "city_name", allowNull: false},
 });
 
-City.hasMany(Flight, {
-    foreignKey: {name: "origin", allowNull: false},
-});
+Flight.hasOne(City);
 
-City.hasMany(Flight, {
-    foreignKey: {name: "destination", allowNull: false},
-});
+Flight.hasOne(City);
 
-Country.hasMany(City, {
+Flight.hasOne(AirCraft);
+
+City.hasOne(Country, {
     foreignKey: {name: "country_name", allowNull: false, unique: true},
 });
 
-AircraftType.hasMany(AircraftLayout, {
+AircraftLayout.hasOne(AircraftType, {
     foreignKey: {name: "type_id", allowNull: false},
 });
 
-AirCraft.hasMany(AircraftLayout, {
+AirCraft.hasOne(AircraftLayout, {
     foreignKey: {name: "layout_id", allowNull: false},
 });
+
+// Country.hasMany(Airport, {
+//     foreignKey: {name: "country_name", allowNull: false},
+// });
+//
+// City.hasMany(Airport, {
+//     foreignKey: {name: "city_name", allowNull: false},
+// });
+//
+// City.hasMany(Flight, {
+//     foreignKey: {name: "origin", allowNull: false},
+// });
+//
+// City.hasMany(Flight, {
+//     foreignKey: {name: "destination", allowNull: false},
+// });
+//
+// Country.hasMany(City, {
+//     foreignKey: {name: "country_name", allowNull: false, unique: true},
+// });
+//
+// AircraftType.hasMany(AircraftLayout, {
+//     foreignKey: {name: "type_id", allowNull: false},
+// });
+//
+// AirCraft.hasMany(AircraftLayout, {
+//     foreignKey: {name: "layout_id", allowNull: false},
+// });
 
 const init_db = async () => {
     try {
