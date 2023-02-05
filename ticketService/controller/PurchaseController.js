@@ -17,6 +17,7 @@ const PurchaseRouter = express.Router();
 //     });
 // });
 
+
 PurchaseRouter.get("/:CorrespondingUserId", async (req, res, next) => {
   try {
     const result = await PurchaseService.getPurchaseByCorrespondingUserId(

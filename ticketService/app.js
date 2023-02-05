@@ -39,6 +39,9 @@ const initApp = () => {
     next();
   });
 
+
+
+  
   //routers
   app.use("/purchase", PurchaseRouter);
   //error handler

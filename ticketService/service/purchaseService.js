@@ -1,4 +1,4 @@
-const ticketRepo = require("../repository/purchaseRepository");
+const purchaseRepo = require("../repository/purchaseRepository");
 
 class PurchaseService {
   getPurchaseByCorrespondingUserId = async (corresponding_user_id) => {
@@ -6,7 +6,7 @@ class PurchaseService {
     //TODO some validation here
 
     try {
-      const result = await ticketRepo.findPurchaseById(corresponding_user_id);
+      const result = await purchaseRepo.findPurchaseById(corresponding_user_id);
       if (result === null || result === undefined) {
         const err = new Error(
           "Could not found purchase with user_id: " + corresponding_user_id
