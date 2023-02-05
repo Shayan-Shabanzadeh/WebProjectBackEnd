@@ -7,6 +7,7 @@ const PurchaseRouter = require("./controller/PurchaseController");
 const AircraftRouter = require("./controller/AircraftController");
 const AircraftTypeRouter = require("./controller/AircraftTypeController");
 const AircraftLayoutController = require('./controller/aircraftLayoutController')
+const CountryController = require('./controller/CountryController')
 const logger = require("./utils/Logger");
 const { init_db } = require("./entity/entities");
 
@@ -50,6 +51,7 @@ const initApp = () => {
   app.use("/aircraft", AircraftRouter);
   app.use("/aircraft_type", AircraftTypeRouter);
   app.use('/aircraftLayout',AircraftLayoutController);
+  app.use('countries',CountryController)
 
   //error handler
   app.use((req, res, next) => {
