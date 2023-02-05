@@ -28,6 +28,11 @@ const sequelize = new Sequelize(db, {
 const AircraftType = sequelize.define(
     "aircraft_type",
     {
+        type_id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -262,6 +267,8 @@ AircraftType.hasMany(AircraftLayout, {
 });
 
 AirCraft.hasMany(AircraftLayout, {
+
+AircraftLayout.hasMany(AirCraft, {
     foreignKey: {name: "layout_id", allowNull: false},
 });
 

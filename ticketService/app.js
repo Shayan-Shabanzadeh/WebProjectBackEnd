@@ -5,6 +5,8 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const PurchaseRouter = require("./controller/PurchaseController");
 const AircraftRouter = require("./controller/AircraftController");
+const AircraftTypeRouter = require("./controller/AircraftTypeController");
+const AircraftLayoutController = require('./controller/aircraftLayoutController')
 const logger = require("./utils/Logger");
 const { init_db } = require("./entity/entities");
 
@@ -46,6 +48,9 @@ const initApp = () => {
   //routers
   app.use("/purchase", PurchaseRouter);
   app.use("/aircraft", AircraftRouter);
+  app.use("/aircraft_type", AircraftTypeRouter);
+  app.use('/aircraftLayout',AircraftLayoutController);
+
   //error handler
   app.use((req, res, next) => {
     const error = new Error("Not found");

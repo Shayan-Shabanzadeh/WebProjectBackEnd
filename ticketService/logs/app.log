@@ -167,3 +167,123 @@ Sun, 05 Feb 2023 13:17:46 GMT | INFO | app.log | All tables has been created suc
 Sun, 05 Feb 2023 13:18:24 GMT | INFO | app.log | server listening on port 9000 | 
 Sun, 05 Feb 2023 13:18:24 GMT | INFO | app.log | Connection has been established successfully. | 
 Sun, 05 Feb 2023 13:18:24 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:21:34 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:21:34 GMT | ERROR | app.log | Unable to connect to the database: | data:{"name":"SequelizeConnectionError","parent":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"},"original":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"}} | 
+Sun, 05 Feb 2023 11:21:34 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeConnectionError","parent":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"},"original":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"}} | 
+Sun, 05 Feb 2023 11:25:50 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:25:51 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:25:51 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:28:08 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:28:08 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:28:08 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:34:12 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:34:12 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:34:12 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:33 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:33 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:33 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:50 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:50 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:50 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:55 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:55 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:55 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:59 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:59 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:59 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:04 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:04 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:04 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:11 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:11 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:11 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:17 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:17 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:17 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:37 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:37 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:37 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:48:22 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:48:22 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:48:22 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:48:42 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:48:42 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:48:42 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:49:26 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:49:26 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:49:26 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:50:29 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:50:29 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:50:29 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:57:27 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:57:27 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:57:27 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:58:23 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:58:23 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:58:23 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:58:28 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:58:28 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:58:29 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:05 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:05 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:05 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:11 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:11 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:11 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:33 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:33 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:33 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:31:02 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:31:02 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:31:02 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:31:29 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:31:30 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:31:30 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:40:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:40:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:40:08 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:41:06 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:41:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:41:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:41:20 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:41:20 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:41:20 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:20 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:20 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:20 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:24 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:24 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:24 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:26 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:27 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:27 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:33 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:34 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:34 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:39 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:39 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:39 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:44 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:44 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:44 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:51 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:52 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:52 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:43:13 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:43:13 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:43:13 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:44:36 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:44:36 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:44:36 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:45:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:45:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:45:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:46:12 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:46:12 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:46:12 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:46:51 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:46:51 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:46:51 GMT | INFO | app.log | All tables has been created successfully. | 
