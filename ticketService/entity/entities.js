@@ -98,10 +98,6 @@ const AircraftLayout = sequelize.define(
   }
 );
 
-AircraftType.hasMany(AircraftLayout, {
-  foreignKey: { name: "type_id", allowNull: false },
-});
-
 const AirCraft = sequelize.define(
   "aircraft",
   {
@@ -115,10 +111,6 @@ const AirCraft = sequelize.define(
     freezeTableName: true,
   }
 );
-
-AircraftLayout.hasMany(AirCraft, {
-  foreignKey: { name: "layout_id", allowNull: false },
-});
 
 const Airport = sequelize.define(
   "airport",
@@ -265,6 +257,14 @@ Country.hasMany(City, {
   foreignKey: { name: "country_name", allowNull: false, unique: true },
 });
 
+AircraftType.hasMany(AircraftLayout, {
+  foreignKey: { name: "type_id", allowNull: false },
+});
+
+AircraftLayout.hasMany(AirCraft, {
+  foreignKey: { name: "layout_id", allowNull: false },
+});
+
 const init_db = async () => {
   try {
     await sequelize.authenticate();
@@ -286,4 +286,4 @@ const init_db = async () => {
     });
 };
 
-module.exports = { init_db, sequelize, AircraftLayout, AircraftType, Purchase };
+module.exports = { init_db, sequelize, AircraftLayout, AircraftType,AirCraft , Airport , Country , City , Flight,   Purchase };

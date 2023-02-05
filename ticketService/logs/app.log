@@ -89,3 +89,6 @@ Sun, 05 Feb 2023 08:33:27 GMT | INFO | app.log | All tables has been created suc
 Sun, 05 Feb 2023 08:33:43 GMT | INFO | app.log | server listening on port 9000 | 
 Sun, 05 Feb 2023 08:33:43 GMT | INFO | app.log | Connection has been established successfully. | 
 Sun, 05 Feb 2023 08:33:43 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:37:22 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:37:22 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:37:22 GMT | INFO | app.log | All tables has been created successfully. | 
