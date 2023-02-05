@@ -1,0 +1,214 @@
+Sun, 05 Feb 2023 07:36:59 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:36:59 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:36:59 GMT | ERROR | app.log | Unable to connect to the database:  | data:{"name":"SequelizeHostNotFoundError","parent":{"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"undefined"},"original":{"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"undefined"}} | 
+Sun, 05 Feb 2023 07:41:01 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:41:01 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:41:01 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:42:56 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:42:56 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:42:56 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:43:42 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:43:42 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:43:42 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:45:56 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:45:56 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:45:56 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:46:02 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:46:02 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:46:02 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:46:24 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:46:24 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:46:24 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:47:15 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:47:15 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:47:15 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:47:30 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:47:30 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:47:30 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:52:58 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:52:58 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:52:58 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:54:03 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:54:03 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:54:03 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:54:05 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:54:05 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:54:05 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 07:54:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 07:54:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 07:54:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:06:40 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:06:41 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:06:41 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:25:19 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:25:19 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:25:22 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:25:22 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:25:36 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:25:36 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:25:36 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:25:52 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:25:52 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:25:52 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:28:08 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:28:08 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:28:08 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:29:41 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:29:41 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:29:41 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"airport\" (\"iata_code\" VARCHAR(255) , \"airport_name\" VARCHAR(255) NOT NULL, \"country_name\" VARCHAR(255) NOT NULL REFERENCES \"country\" (\"country_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"city_name\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"iata_code\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:31:12 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:31:12 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:31:12 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:31:14 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:31:14 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:31:14 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:31:18 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:31:18 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:31:18 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));"},"original":{"length":150,"name":"error","severity":"ERROR","code":"42830","file":"tablecmds.c","line":"11494","routine":"transformFkeyCheckAttrs","sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"flight\" (\"flight_serial\"  SERIAL , \"flight_id\" VARCHAR(255) NOT NULL, \"departure_utc\" TIMESTAMP NOT NULL, \"duration\" TIME NOT NULL, \"y_price\" INTEGER NOT NULL, \"j_price\" INTEGER NOT NULL, \"f_price\" INTEGER NOT NULL, \"origin\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, \"destination\" VARCHAR(255) NOT NULL REFERENCES \"city\" (\"city_name\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"flight_serial\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:31:22 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:31:22 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:31:22 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:31:25 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:31:25 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:31:25 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:31:57 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:31:57 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:31:57 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:32:04 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:32:04 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:32:04 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:32:21 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:32:21 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:32:21 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:33:18 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:33:18 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:33:18 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeDatabaseError","parent":{"length":113,"name":"error","severity":"ERROR","code":"42P01","file":"namespace.c","line":"436","routine":"RangeVarGetRelidExtended","sql":"CREATE TABLE IF NOT EXISTS \"aircraft\" (\"registration\" VARCHAR(255) , \"layout_id\" INTEGER NOT NULL REFERENCES \"aircraft_layout\" (\"layout_id\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"registration\"));"},"original":{"length":113,"name":"error","severity":"ERROR","code":"42P01","file":"namespace.c","line":"436","routine":"RangeVarGetRelidExtended","sql":"CREATE TABLE IF NOT EXISTS \"aircraft\" (\"registration\" VARCHAR(255) , \"layout_id\" INTEGER NOT NULL REFERENCES \"aircraft_layout\" (\"layout_id\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"registration\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"aircraft\" (\"registration\" VARCHAR(255) , \"layout_id\" INTEGER NOT NULL REFERENCES \"aircraft_layout\" (\"layout_id\") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY (\"registration\"));","parameters":{}} | 
+Sun, 05 Feb 2023 08:33:27 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:33:27 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:33:27 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:33:43 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:33:43 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:33:43 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 08:37:22 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 08:37:22 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 08:37:22 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:21:34 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:21:34 GMT | ERROR | app.log | Unable to connect to the database: | data:{"name":"SequelizeConnectionError","parent":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"},"original":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"}} | 
+Sun, 05 Feb 2023 11:21:34 GMT | ERROR | app.log | Unable to create tables | data:{"name":"SequelizeConnectionError","parent":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"},"original":{"length":104,"name":"error","severity":"FATAL","code":"28P01","file":"auth.c","line":"329","routine":"auth_failed"}} | 
+Sun, 05 Feb 2023 11:25:50 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:25:51 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:25:51 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:28:08 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:28:08 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:28:08 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:34:12 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:34:12 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:34:12 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:33 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:33 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:33 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:50 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:50 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:50 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:55 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:55 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:55 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:35:59 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:35:59 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:35:59 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:04 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:04 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:04 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:11 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:11 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:11 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:17 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:17 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:17 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:36:37 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:36:37 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:36:37 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:48:22 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:48:22 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:48:22 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:48:42 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:48:42 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:48:42 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:49:26 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:49:26 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:49:26 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:50:29 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:50:29 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:50:29 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:57:27 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:57:27 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:57:27 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:58:23 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:58:23 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:58:23 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:58:28 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:58:28 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:58:29 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:05 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:05 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:05 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:11 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:11 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:11 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 11:59:33 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 11:59:33 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 11:59:33 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:31:02 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:31:02 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:31:02 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:31:29 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:31:30 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:31:30 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:40:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:40:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:40:08 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:41:06 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:41:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:41:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:41:20 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:41:20 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:41:20 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:20 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:20 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:20 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:24 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:24 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:24 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:26 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:27 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:27 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:33 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:34 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:34 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:39 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:39 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:39 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:44 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:44 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:44 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:42:51 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:42:52 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:42:52 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:43:13 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:43:13 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:43:13 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:44:36 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:44:36 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:44:36 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:45:07 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:45:07 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:45:07 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:46:12 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:46:12 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:46:12 GMT | INFO | app.log | All tables has been created successfully. | 
+Sun, 05 Feb 2023 12:46:51 GMT | INFO | app.log | server listening on port 9000 | 
+Sun, 05 Feb 2023 12:46:51 GMT | INFO | app.log | Connection has been established successfully. | 
+Sun, 05 Feb 2023 12:46:51 GMT | INFO | app.log | All tables has been created successfully. | 
