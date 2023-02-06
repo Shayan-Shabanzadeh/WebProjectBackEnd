@@ -1,8 +1,8 @@
 const express = require('express');
 const AirCraftService = require('../service/airCraftLayoutService');
-const AircraftRouter = express.Router();
+const AircraftLayoutRouter = express.Router();
 
-AircraftRouter.get('/:aircraftid',async (req, res, next)=>{
+AircraftLayoutRouter.get('/:aircraftid',async (req, res, next)=>{
 	try {
 		const result = await AirCraftService.getAirCraftLayoutByLayoutId(
 			req.params.aircraftid
@@ -16,4 +16,4 @@ AircraftRouter.get('/:aircraftid',async (req, res, next)=>{
 	}
 })
 
-module.exports = AircraftRouter;
+module.exports = AircraftLayoutRouter;
