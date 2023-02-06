@@ -9,6 +9,7 @@ const AircraftTypeRouter = require("./controller/AircraftTypeController");
 const AirportRouter = require("./controller/AirportController");
 const AircraftLayoutController = require('./controller/aircraftLayoutController')
 const CountryController = require('./controller/CountryController')
+const CityController = require('./controller/CityController')
 const FlightController = require('./controller/FlightController')
 const logger = require("./utils/Logger");
 const {init_db, Flight} = require("./entity/entities");
@@ -54,6 +55,7 @@ const initApp = () => {
     app.use('/airport', AirportRouter);
     app.use('/flight', FlightController);
     app.use('/country', CountryController);
+    app.use('/city', CityController);
 
 
     //error handler

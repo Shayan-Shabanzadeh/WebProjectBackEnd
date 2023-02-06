@@ -252,9 +252,17 @@ Airport.hasOne(City, {
     foreignKey: {name: "city_name", allowNull: false},
 });
 
-Flight.hasOne(City);
+// Flight.hasOne(City);
+//
+// Flight.hasOne(City);
 
-Flight.hasOne(City);
+City.hasMany(Flight, {
+    foreignKey: {name: "origin", allowNull: false},
+});
+
+City.hasMany(Flight, {
+    foreignKey: {name: "destination", allowNull: false},
+});
 
 Flight.hasOne(AirCraft);
 
