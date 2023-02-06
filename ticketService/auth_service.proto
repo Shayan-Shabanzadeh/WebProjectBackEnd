@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package= "./grpc_models";
+
+message JwtIsValidResponse {
+    bool isValid = 1;
+}
+
+message  JwtIsValidRequest{
+    string jwt_token = 1;
+}
+
+
+service GprcAuthService {
+    rpc JwtIsValid(JwtIsValidRequest) returns (JwtIsValidResponse){}
+}
