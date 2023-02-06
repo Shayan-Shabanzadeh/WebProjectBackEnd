@@ -12,6 +12,7 @@ const (
 	ENTITY_ALREADY_EXISTS
 	INVALID_REQUEST
 	ENTITY_DOES_NOT_EXIST
+	TOKEN_EXPIRED
 )
 
 func (e Error_type) String() string {

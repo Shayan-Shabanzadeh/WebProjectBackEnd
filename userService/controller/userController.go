@@ -1,6 +1,9 @@
 package controller
 
 import (
+	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt"
+	"golang.org/x/crypto/bcrypt"
 	"net/http"
 	"os"
 	"regexp"
@@ -8,10 +11,6 @@ import (
 	"userService/dto"
 	"userService/errors"
 	"userService/service"
-
-	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt"
-	"golang.org/x/crypto/bcrypt"
 )
 
 func Signup(c *gin.Context) {
@@ -22,7 +21,7 @@ func Signup(c *gin.Context) {
 		return
 	}
 	//hash the password
-	hash, err := bcrypt.GenerateFromPassword([]byte(userDto.Password), 10)
+	hash, err := bcrypt.GenerateFromPassword([]byte(userDto.Password_hash), 10)
 
 	if err != nil {
 		error := errors.New_hashing_error(err).Error
@@ -33,7 +32,7 @@ func Signup(c *gin.Context) {
 		return
 	}
 
-	userDto.Password = string(hash)
+	userDto.Password_hash = string(hash)
 
 	//add user
 	_, error := service.AddUser(userDto)
@@ -66,7 +65,7 @@ func Signin(c *gin.Context) {
 		return
 	}
 
-	error := bcrypt.CompareHashAndPassword([]byte(result.Password), []byte(userDto.Password))
+	error := bcrypt.CompareHashAndPassword([]byte(result.Password_hash), []byte(userDto.Password_hash))
 
 	if error != nil {
 		c.JSON(400, gin.H{
@@ -75,30 +74,113 @@ func Signin(c *gin.Context) {
 				nil,
 				errors.New_Invalid_request_error("Invalid email or password", nil).Error),
 		})
+		return
 	}
-
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"sub": userDto.ID,
+	access_token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"sub": result.User_id,
 		"exp": time.Now().Add(time.Hour).Unix(),
 	})
-	tokenString, error := token.SignedString([]byte(os.Getenv("SECRET")))
+	accessTokenString, error := access_token.SignedString([]byte(os.Getenv("SECRET")))
 
 	if error != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"result": dto.Create_http_response(
 				500,
 				nil,
-				errors.New_internal_error("Failed to create token", error).Error),
+				errors.New_internal_error("Failed to create  access token", error).Error),
 		})
 
 		return
 	}
+
+	refresh_token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"sub": result.User_id,
+		"exp": time.Now().Add(time.Hour * 12).Unix(),
+	})
+	refreshTokenString, error := refresh_token.SignedString([]byte(os.Getenv("SECRET")))
+
+	if error != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"result": dto.Create_http_response(
+				500,
+				nil,
+				errors.New_internal_error("Failed to create  access token", error).Error),
+		})
+
+		return
+	}
+
+	c.SetCookie("access_token", accessTokenString, 60, "/", "localhost", false, true)
+	c.SetCookie("refresh_token", refreshTokenString, 12*60, "/", "localhost", false, true)
+	c.SetCookie("logged_in", "true", 60, "/", "localhost", false, false)
+
 	c.JSON(200, gin.H{
 		"result": dto.Create_http_response(
 			200,
-			map[string]string{"access_token": tokenString},
+			map[string]string{"access_token": accessTokenString, "refresh_token": refreshTokenString},
 			nil),
 	})
+}
+
+func RefreshAccessToken(c *gin.Context) {
+	// message := "could not refresh access token"
+	cookie, err := c.Cookie("refresh_token")
+	if len(cookie) == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"result": dto.Create_http_response(
+				400,
+				nil,
+				errors.New_Invalid_request_error("Failed to read  access token or you are not login", nil).Error),
+		})
+
+		return
+	}
+
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusForbidden, gin.H{"status": "fail", "message": err.Error()})
+		return
+	}
+
+	sub, err_message := ValidateToken(cookie)
+	if len(err_message) > 0 {
+		c.AbortWithStatusJSON(http.StatusForbidden, gin.H{"status": "fail", "message": err_message})
+		return
+	}
+
+	access_token, err := createAccessToken(sub)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"result": dto.Create_http_response(
+				500,
+				nil,
+				errors.New_internal_error("Failed to create  access token", err).Error),
+		})
+
+		return
+	}
+
+	c.SetCookie("access_token", access_token, 60, "/", "localhost", false, true)
+	c.SetCookie("logged_in", "true", 12*60, "/", "localhost", false, false)
+
+	c.JSON(200, gin.H{
+		"result": dto.Create_http_response(
+			200,
+			map[string]string{"access_token": access_token},
+			nil),
+	})
+
+}
+
+func Logout(c *gin.Context) {
+
+	c.SetCookie("access_token", "", -1, "/", "localhost", false, true)
+	c.SetCookie("refresh_token", "", -1, "/", "localhost", false, true)
+	c.SetCookie("logged_in", "", -1, "/", "localhost", false, true)
+
+	// id, err_message := ValidateToken(headers)
+
+	c.JSON(http.StatusOK, gin.H{"status": "success"})
+
 }
 
 func validate_user(c *gin.Context, userDto dto.UserDto) *dto.UserDto {
@@ -135,7 +217,7 @@ func validate_user(c *gin.Context, userDto dto.UserDto) *dto.UserDto {
 	}
 
 	//check if password is empty
-	if len(userDto.Password) == 0 {
+	if len(userDto.Password_hash) == 0 {
 		error := errors.New_Invalid_request_error("Password cannot be empty", nil).Error
 		result := dto.Create_http_response(error.Error_code, nil, error)
 		c.JSON(error.Error_code, gin.H{
@@ -146,4 +228,42 @@ func validate_user(c *gin.Context, userDto dto.UserDto) *dto.UserDto {
 
 	return &userDto
 
+}
+
+func createAccessToken(id int) (string, error) {
+	expireTime := time.Now().Add(time.Hour).Unix()
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"exp": expireTime,
+		"sub": id,
+	})
+	tokenString, error := token.SignedString([]byte(os.Getenv("SECRET")))
+	if error != nil {
+		return "", error
+	}
+	return tokenString, nil
+}
+
+func extractToken(tokenStr string) (jwt.MapClaims, error) {
+
+	token, err := jwt.Parse(tokenStr, func(t *jwt.Token) (interface{}, error) {
+		return []byte(os.Getenv("SECRET")), nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	claims := token.Claims.(jwt.MapClaims)
+	return claims, nil
+}
+
+func ValidateToken(tokenStr string) (int, string) {
+	claims, err := extractToken(tokenStr)
+	if err != nil {
+		return 0, err.Error()
+	}
+	sub := int(claims["sub"].(float64))
+	exp := int64(claims["exp"].(float64))
+	if exp < time.Now().Unix() {
+		return 0, errors.New_token_expired_exception("token is expired", nil).Error.Message
+	}
+	return sub, ""
 }

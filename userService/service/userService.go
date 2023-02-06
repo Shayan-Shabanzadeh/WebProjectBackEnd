@@ -43,3 +43,17 @@ func Get_user_by_email(email string) (*dto.UserDto, *errors.Base_error) {
 
 	return user, nil
 }
+
+func Get_user_by_id(id int) (*dto.UserDto, *errors.Base_error) {
+	user, error := repository.FindUserById(id)
+	if error != nil {
+		return nil, error
+	}
+	if user == nil {
+		return nil, errors.New_entity_does_not_exist_error(
+			fmt.Sprintf("user with id : %v , is not found.", id),
+			nil).Error
+	}
+
+	return user, nil
+}
