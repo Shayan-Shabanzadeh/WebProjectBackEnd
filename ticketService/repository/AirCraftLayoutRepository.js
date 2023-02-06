@@ -1,6 +1,6 @@
 const { AircraftLayout } = require("../entity/entities");
 const logger = require("../utils/Logger");
-const AircraftLayoutDto = require("../dto/AircraftLayout");
+const AircraftLayoutDto = require("../dto/AircraftLayoutDto");
 
 class AirCraftLayoutRepository {
   findAirCraftLayoutById = async (layout_id) => {
