@@ -1,5 +1,4 @@
 const { Airport } = require('../entity/entities')
-const logger = require('../logs/app.log')
 const AirportDto = require('../dto/AirportDto')
 
 class AirportRepository{

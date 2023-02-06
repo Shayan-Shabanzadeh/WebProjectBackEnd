@@ -15,3 +15,5 @@ CityRouter.get('/:country_name',async (req,res,next)=>{
 		next(e)
 	}
 })
+
+module.exports = CityRouter;

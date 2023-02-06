@@ -6,6 +6,7 @@ class CountryRepository {
 	getAllCountries = async ()=>{
 		try {
 			const result = await Country.findAll();
+			console.log(result)
 			if (!result) return null
 			else return result
 		}catch (e) {

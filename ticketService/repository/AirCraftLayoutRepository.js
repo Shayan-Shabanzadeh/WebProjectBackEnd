@@ -1,5 +1,4 @@
 const { AircraftLayout } = require('../entity/entities')
-const logger = require('../logs/app.log')
 const AircraftLayoutDto = require('../dto/AircraftLayout')
 
 class AirCraftLayoutRepository{

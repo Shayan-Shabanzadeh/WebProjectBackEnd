@@ -53,6 +53,7 @@ const initApp = () => {
     app.use('/aircraftLayout', AircraftLayoutController);
     app.use('/airport', AirportRouter);
     app.use('/flight', FlightController);
+    app.use('/country', CountryController);
 
 
     //error handler

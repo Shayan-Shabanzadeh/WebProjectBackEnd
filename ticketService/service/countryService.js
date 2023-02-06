@@ -9,6 +9,8 @@ class CountryService {
 				);
 				error.status = 404
 				throw error;
+			}else {
+				return result;
 			}
 		}catch (e) {
 			throw e;

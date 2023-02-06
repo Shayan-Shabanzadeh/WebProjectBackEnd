@@ -1,5 +1,4 @@
 const {Flight} = require('../entity/entities')
-const logger = require('../logs/app.log')
 const FlightDto = require('../dto/FlightDto')
 
 class FlightRepository {
