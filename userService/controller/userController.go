@@ -211,6 +211,15 @@ func validate_user(c *gin.Context, userDto dto.UserDto) *dto.UserDto {
 		})
 		return nil
 	}
+	if len(userDto.Phone_number) == 0 {
+		error := errors.New_Invalid_request_error("Phone number cannot be empty.", nil).Error
+		result := dto.Create_http_response(error.Error_code, nil, error)
+		c.JSON(error.Error_code, gin.H{
+			"result": result,
+		})
+		return nil
+	}
+
 	//Check email regex
 	re := regexp.MustCompile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
 

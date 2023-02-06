@@ -10,13 +10,20 @@ import (
 func AddUser(userDto dto.UserDto) (*dto.UserDto, *errors.Base_error) {
 
 	//check if user already exists
-	user, error := repository.FindUserByEmail(userDto.Email)
+	u1, error := repository.FindUserByEmail(userDto.Email)
 	if error != nil {
 		return nil, error
 	}
-	if user != nil {
+
+	u2, error := repository.FindUserByPhoneNumber(userDto.Phone_number)
+
+	if error != nil {
+		return nil, error
+	}
+
+	if u1 != nil || u2 != nil {
 		return nil, errors.New_entity_already_exist_error(
-			fmt.Sprintf("user with email : %v , is already added.", userDto.Email),
+			"user is already added",
 			nil).Error
 	}
 	// add user to db
