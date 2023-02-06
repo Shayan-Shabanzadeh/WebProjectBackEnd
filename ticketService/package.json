@@ -8,11 +8,14 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.8.7",
+    "@types/google-protobuf": "^3.15.6",
     "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
     "dto-mapper": "^0.2.3",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
+    "grpc-tools": "^1.12.4",
     "morgan": "^1.10.0",
     "path": "^0.12.7",
     "pg": "^8.9.0",
