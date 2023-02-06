@@ -1,0 +1,20 @@
+syntax = "proto3";
+option go_package= "./grpc_models";
+
+message GetUserReponse {
+    int64 user_id = 1;
+    string Email = 2;
+    string phone_number =3 ;
+    string geneder = 4;
+    string first_name = 5;
+    string last_name = 6;
+}
+
+message  GetUserRequest{
+    int64 user_id = 1;
+}
+
+
+service GprcAuthService {
+    rpc GetUser(GetUserRequest) returns (GetUserReponse){}
+}

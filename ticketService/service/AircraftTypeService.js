@@ -1,5 +1,4 @@
 const AircraftTypeRepo = require("../repository/AircraftTypeRepository");
-const {AircraftType} = require("../entity/entities");
 
 class AircraftTypeService {
     getAircraftTypeById = async (type_id) => {
@@ -7,10 +6,10 @@ class AircraftTypeService {
         //TODO some validation here
 
         try {
-            const result = await AircraftType.findPurchaseById(type_id);
+            const result = await AircraftTypeRepo.findAircraftTypeById(type_id);
             if (result === null || result === undefined) {
                 const err = new Error(
-                    "Could not found purchase with user_id: " + type_id
+                    "Could not found aircraft type  with type_id: " + type_id
                 );
                 err.status = 404;
                 throw err;
