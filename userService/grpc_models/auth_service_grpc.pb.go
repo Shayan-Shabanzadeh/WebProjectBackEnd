@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GprcAuthServiceClient interface {
-	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserReponse, error)
+	JwtIsValid(ctx context.Context, in *JwtIsValidRequest, opts ...grpc.CallOption) (*JwtIsValidResponse, error)
 }
 
 type gprcAuthServiceClient struct {
@@ -33,9 +33,9 @@ func NewGprcAuthServiceClient(cc grpc.ClientConnInterface) GprcAuthServiceClient
 	return &gprcAuthServiceClient{cc}
 }
 
-func (c *gprcAuthServiceClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserReponse, error) {
-	out := new(GetUserReponse)
-	err := c.cc.Invoke(ctx, "/GprcAuthService/GetUser", in, out, opts...)
+func (c *gprcAuthServiceClient) JwtIsValid(ctx context.Context, in *JwtIsValidRequest, opts ...grpc.CallOption) (*JwtIsValidResponse, error) {
+	out := new(JwtIsValidResponse)
+	err := c.cc.Invoke(ctx, "/GprcAuthService/JwtIsValid", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *gprcAuthServiceClient) GetUser(ctx context.Context, in *GetUserRequest,
 // All implementations must embed UnimplementedGprcAuthServiceServer
 // for forward compatibility
 type GprcAuthServiceServer interface {
-	GetUser(context.Context, *GetUserRequest) (*GetUserReponse, error)
+	JwtIsValid(context.Context, *JwtIsValidRequest) (*JwtIsValidResponse, error)
 	mustEmbedUnimplementedGprcAuthServiceServer()
 }
 
@@ -54,8 +54,8 @@ type GprcAuthServiceServer interface {
 type UnimplementedGprcAuthServiceServer struct {
 }
 
-func (UnimplementedGprcAuthServiceServer) GetUser(context.Context, *GetUserRequest) (*GetUserReponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
+func (UnimplementedGprcAuthServiceServer) JwtIsValid(context.Context, *JwtIsValidRequest) (*JwtIsValidResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method JwtIsValid not implemented")
 }
 func (UnimplementedGprcAuthServiceServer) mustEmbedUnimplementedGprcAuthServiceServer() {}
 
@@ -70,20 +70,20 @@ func RegisterGprcAuthServiceServer(s grpc.ServiceRegistrar, srv GprcAuthServiceS
 	s.RegisterService(&GprcAuthService_ServiceDesc, srv)
 }
 
-func _GprcAuthService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserRequest)
+func _GprcAuthService_JwtIsValid_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(JwtIsValidRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GprcAuthServiceServer).GetUser(ctx, in)
+		return srv.(GprcAuthServiceServer).JwtIsValid(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/GprcAuthService/GetUser",
+		FullMethod: "/GprcAuthService/JwtIsValid",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GprcAuthServiceServer).GetUser(ctx, req.(*GetUserRequest))
+		return srv.(GprcAuthServiceServer).JwtIsValid(ctx, req.(*JwtIsValidRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -96,8 +96,8 @@ var GprcAuthService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*GprcAuthServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetUser",
-			Handler:    _GprcAuthService_GetUser_Handler,
+			MethodName: "JwtIsValid",
+			Handler:    _GprcAuthService_JwtIsValid_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

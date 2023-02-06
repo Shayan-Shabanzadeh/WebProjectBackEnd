@@ -11,6 +11,7 @@ import (
 	"userService/dto"
 	"userService/errors"
 	"userService/service"
+	"userService/util"
 )
 
 func Signup(c *gin.Context) {
@@ -141,12 +142,18 @@ func RefreshAccessToken(c *gin.Context) {
 		return
 	}
 
-	sub, err_message := ValidateToken(cookie)
-	if len(err_message) > 0 {
+	isValid, err_message := util.ValidateToken(cookie)
+	if !isValid {
 		c.AbortWithStatusJSON(http.StatusForbidden, gin.H{"status": "fail", "message": err_message})
 		return
 	}
 
+	claims, err := util.ExtractToken(cookie)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusForbidden, gin.H{"status": "fail", "message": err_message})
+		return
+	}
+	sub := int(claims["sub"].(int))
 	access_token, err := createAccessToken(sub)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -241,29 +248,4 @@ func createAccessToken(id int) (string, error) {
 		return "", error
 	}
 	return tokenString, nil
-}
-
-func extractToken(tokenStr string) (jwt.MapClaims, error) {
-
-	token, err := jwt.Parse(tokenStr, func(t *jwt.Token) (interface{}, error) {
-		return []byte(os.Getenv("SECRET")), nil
-	})
-	if err != nil {
-		return nil, err
-	}
-	claims := token.Claims.(jwt.MapClaims)
-	return claims, nil
-}
-
-func ValidateToken(tokenStr string) (int, string) {
-	claims, err := extractToken(tokenStr)
-	if err != nil {
-		return 0, err.Error()
-	}
-	sub := int(claims["sub"].(float64))
-	exp := int64(claims["exp"].(float64))
-	if exp < time.Now().Unix() {
-		return 0, errors.New_token_expired_exception("token is expired", nil).Error.Message
-	}
-	return sub, ""
 }

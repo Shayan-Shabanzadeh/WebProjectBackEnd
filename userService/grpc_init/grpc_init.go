@@ -15,8 +15,8 @@ type GrpcAuthService struct {
 	grpc_models.UnimplementedGprcAuthServiceServer
 }
 
-func (s GrpcAuthService) GetUser(c context.Context, req *grpc_models.GetUserRequest) (*grpc_models.GetUserReponse, error) {
-	result, err := grpc_controller.GetUserById(req)
+func (s GrpcAuthService) JwtIsValid(c context.Context, req *grpc_models.JwtIsValidRequest) (*grpc_models.JwtIsValidResponse, error) {
+	result, err := grpc_controller.ValidateJwt(req)
 	if err != nil {
 		return nil, err
 	}
