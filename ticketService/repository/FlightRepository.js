@@ -25,6 +25,17 @@ class FlightRepository {
         } catch (e) {
             console.log(e)
         }
+    };
+    findFlightBasedOnOriginAndDestination = async (org,des)=>{
+        try {
+            const result = await Flight.findAll({
+                where:{destination: des, origin: org}
+            })
+            if (!result) return null;
+            return result;
+        }catch (e) {
+            console.log(e)
+        }
     }
 }
 
