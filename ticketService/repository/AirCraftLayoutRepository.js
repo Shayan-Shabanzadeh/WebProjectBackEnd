@@ -5,19 +5,19 @@ const AircraftLayoutDto = require("../dto/AircraftLayoutDto");
 
 
 class AirCraftLayoutRepository {
-  findAirCraftLayoutById = async (layout_id) => {
+  findAirCraftLayoutById = async (type_id) => {
     try {
       const result = await AircraftLayout.findOne({
-        where: { layout_id: layout_id },
+        where: { type_id: type_id },
       });
       if (!result) return null;
       else {
         return new AircraftLayoutDto({
           layout_id: result.layout_id,
+          type_id: result.type_id,
           y_class_capacity: result.y_class_capacity,
           f_class_capacity: result.f_class_capacity,
           j_class_capacity: result.j_class_capacity,
-          type_id: result.type_id,
         });
       }
     } catch (e) {

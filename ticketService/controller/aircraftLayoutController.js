@@ -3,7 +3,7 @@ const AirCraftService = require("../service/airCraftLayoutService");
 const AircraftLayoutRouter = express.Router();
 const { verifyJwtFromCookie } = require("../utils/utils");
 
-AircraftLayoutRouter.get("/:aircraftid", async (req, res, next) => {
+AircraftLayoutRouter.get("/:type_id", async (req, res, next) => {
   try {
     //jwt verification
     const isValid = await verifyJwtFromCookie(req);
@@ -14,7 +14,7 @@ AircraftLayoutRouter.get("/:aircraftid", async (req, res, next) => {
     }
     //
     const result = await AirCraftService.getAirCraftLayoutByLayoutId(
-      req.params.aircraftid
+      req.params.type_id
     );
     res.status(200).json({
       msg: "success",
