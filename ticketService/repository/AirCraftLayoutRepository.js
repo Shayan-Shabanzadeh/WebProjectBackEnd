@@ -1,14 +1,12 @@
-
 const { AircraftLayout } = require("../entity/entities");
 const logger = require("../utils/Logger");
 const AircraftLayoutDto = require("../dto/AircraftLayoutDto");
-
 
 class AirCraftLayoutRepository {
   findAirCraftLayoutById = async (type_id) => {
     try {
       const result = await AircraftLayout.findOne({
-        where: { type_id: type_id },
+        where: { layout_id: type_id },
       });
       if (!result) return null;
       else {
