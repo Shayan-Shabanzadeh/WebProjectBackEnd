@@ -1,12 +1,18 @@
 const express = require("express");
 const AirCraftService = require("../service/airCraftLayoutService");
 const AircraftLayoutRouter = express.Router();
-const { verifyJwt } = require("../utils/utils");
+const { verifyJwtFromCookie } = require("../utils/utils");
 
 AircraftLayoutRouter.get("/:aircraftid", async (req, res, next) => {
-  
-  var result =  await verifyJwt();
   try {
+    //jwt verification
+    const isValid = await verifyJwtFromCookie(req);
+    if (isValid === false) {
+      const err = new Error("invalid token");
+      err.status = 403;
+      throw err;
+    }
+    //
     const result = await AirCraftService.getAirCraftLayoutByLayoutId(
       req.params.aircraftid
     );

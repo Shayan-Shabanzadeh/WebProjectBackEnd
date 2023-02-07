@@ -10,7 +10,6 @@ class AirCraftLayoutRepository {
       const result = await AircraftLayout.findOne({
         where: { layout_id: layout_id },
       });
-      console.log(result);
       if (!result) return null;
       else {
         return new AircraftLayoutDto({
