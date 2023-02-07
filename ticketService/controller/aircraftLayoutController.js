@@ -7,7 +7,7 @@ const {
   createTransaction,
 } = require("../utils/utils");
 
-AircraftLayoutRouter.get("/:aircraftid", async (req, res, next) => {
+AircraftLayoutRouter.get("/:type_id", async (req, res, next) => {
   try {
     //jwt verification
 
@@ -48,7 +48,7 @@ AircraftLayoutRouter.get("/:aircraftid", async (req, res, next) => {
 
     //
     const result = await AirCraftService.getAirCraftLayoutByLayoutId(
-      req.params.aircraftid
+      req.params.type_id
     );
     res.status(200).json({
       msg: "success",
