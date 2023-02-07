@@ -8,7 +8,7 @@ class AircraftTypeRepository {
             const result = await AircraftType.findOne({
                 where: {type_id: type_id},
             });
-            if (result === null) {
+            if (!result) {
                 return null;
             } else {
                 return new AircraftTypeDto({
