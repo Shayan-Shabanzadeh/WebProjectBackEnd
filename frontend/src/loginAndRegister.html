@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="css/fonts/fonts.css" rel="stylesheet">
+    <link href="css/loginAndRegister.css" rel="stylesheet">
+    <link href="converted-css/main.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/all.css" rel="stylesheet">
+    <script src="assets/font-awesome/js/all.js"></script>
+
+
+
+    <title>Login and register</title>
+</head>
+
+<body dir="rtl">
+
+<div class="form__container dark:bg-gray-600 w-96 text-black dark:text-white">
+    <form action="POST" class="form " id="login">
+        <h1 class="form__title">ورود</h1>
+        <div class="form__message"></div>
+        <div class="form__input-group">
+            <input type="text" id="loginUsername" name="email" class="form__input text-black" autofocus placeholder=" ادرس ایمیل یا نام کاربری">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form__input text-black" autofocus placeholder="رمز عبور">
+            <div class="form__input-error-message"></div>
+        </div>
+        <button class="form__button text-sm bg-green-600 mb-4" type="submit"> ورود</button>
+        <p class="form__text">
+            <a class="form__link text-sm text-blue-800 dark:text-white" href="./" id="LinkCreateAccount">ثبت نام</a>
+        </p>
+        <p class="form__text">
+            <a class="form__link text-sm text-blue-800 dark:text-white" href="./index.html">بازکشت</a>
+        </p>
+    </form>
+
+    <form action="POST" class="form form--hidden" id="createAccount">
+        <h1 class="form__title">ثبت نام</h1>
+        <div class="form__message form__message--error form__message--success"></div>
+        <div class="form__input-group">
+            <input type="text" name="email" id="signupUsername" class="form__input text-black" autofocus placeholder="ادرس ایمیل">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="text" name="fullName" class="form__input text-black" autofocus placeholder="نام و نام خانوادگی">
+            <div class="form__input-error-message"></div>
+        </div>
+
+        <div class="form__input-group">
+            <input type="text" id="passportNumber" name="passportNumber" class="form__input text-black" autofocus placeholder="شماره پاسپورت">
+            <div class="form__input-error-message"></div>
+        </div>
+
+        <div class="form__input-group">
+            <input type="password" class="form__input text-black" autofocus placeholder="رمزعبور">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form__input text-black" autofocus placeholder="تکرار رمزعبور">
+            <div class="form__input-error-message"></div>
+        </div>
+        <button class="form__button text-sm bg-green-600 mb-4" type="submit"> ثبت نام</button>
+        <p class="form__text">
+            <a class="form__link text-sm text-blue-800 dark:text-white" href="./" id="LinkLogin">ورود به اکانت</a>
+        </p>
+        <p class="form__text">
+            <a class="form__link text-sm text-blue-800 dark:text-white" href="./index.html">بازکشت</a>
+        </p>
+    </form>
+</div>
+<script src="js/loginAndRegister.js"></script>
+</body>
