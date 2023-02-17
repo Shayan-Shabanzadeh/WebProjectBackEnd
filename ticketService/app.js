@@ -2,6 +2,7 @@ const http = require("http");
 const dotenv = require("dotenv");
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const PurchaseRouter = require("./controller/PurchaseController");
 const AircraftRouter = require("./controller/AircraftController");
@@ -21,68 +22,74 @@ const app = express();
 const initApp = () => {
   //login middleware
   app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
+  app.use(express.urlencoded({ extended: true }));
   app.use(morgan("dev"));
-  //   body parser middleware
-  app.use(bodyParser.urlencoded({ extended: false }));
+    // body parser middleware
+
+  app.use(bodyParser.urlencoded({ extended: true }));
+
   app.use(bodyParser.json());
-  //   core errors handlers
+
+  // app.use(cors);
+  // core errors handlers
+  // app.use((req, res, next) => {
+  //   res.header("Access-Control-Allow-Origin", "*");
+  //   res.header(
+  //     "Access-Control-Allow-Headers",
+  //     "Origin, X-Requested-With",
+  //     "Content-Type",
+  //     "Accept",
+  //     "Authorization"
+  //   );
+
+  //   if (req.method === "OPTIONS") {
+  //     res.header(
+  //       "Access-Control-Allow-Methods",
+  //       "PUT , POST, GET,DELETE , PATH"
+  //     );
+
+  //     return res.statusCode(200).json({});
+  //   }
+  //   next();
+  // });
+ 
+
+  //routers
+  
+  app.use("ticket-service/purchase", PurchaseRouter);
+  app.use("ticket-service/aircraft", AircraftRouter);
+  app.use("ticket-service/aircraft_type", AircraftTypeRouter);
+  app.use("ticket-service/aircraftLayout", AircraftLayoutController);
+  app.use("ticket-service/airport", AirportRouter);
+  app.use("ticket-service/flight", FlightController);
+  app.use("ticket-service/country", CountryController);
+  app.use("ticket-service/city", CityController);
+  //cookie parser
+
+  //error handler
   app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With",
-      "Content-Type",
-      "Accept",
-      "Authorization"
-    );
-
-    if (req.method === "OPTIONS") {
-      res.header(
-        "Access-Control-Allow-Methods",
-        "PUT , POST, GET,DELETE , PATH"
-      );
-
-      return res.statusCode(200).json({});
+    const error = new Error("Not found");
+    error.status = 404;
+    next(error);
+  });
+  app.use((error, req, res, next) => {
+    res.status(error.status || 500);
+    if (res.status === 500) {
+      logger.error(error);
+      res.json({
+        error: {
+          message: "Something went wrong.",
+        },
+      });
+    } else {
+      res.json({
+        error: {
+          message: error.message,
+        },
+      });
     }
-    next();
   });
 };
-
-//routers
-app.use("/purchase", PurchaseRouter);
-app.use("/aircraft", AircraftRouter);
-app.use("/aircraft_type", AircraftTypeRouter);
-app.use("/aircraftLayout", AircraftLayoutController);
-app.use("/airport", AirportRouter);
-app.use("/flight", FlightController);
-app.use("/country", CountryController);
-app.use("/city", CityController);
-//cookie parser
-
-//error handler
-app.use((req, res, next) => {
-  const error = new Error("Not found");
-  error.status = 404;
-  next(error);
-});
-app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  if (res.status === 500) {
-    logger.error(error);
-    res.json({
-      error: {
-        message: "Something went wrong.",
-      },
-    });
-  } else {
-    res.json({
-      error: {
-        message: error.message,
-      },
-    });
-  }
-});
 
 const createServer = () => {
   init_db();

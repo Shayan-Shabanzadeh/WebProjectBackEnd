@@ -14,7 +14,6 @@ const options = {
   oneofs: true,
 };
 logger.info(`connected to auth server on ${GRPC_SERVER}:${GRPC_PORT}`);
-
 var packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
 const GprcAuthService =
   grpc.loadPackageDefinition(packageDefinition).GprcAuthService;
@@ -22,5 +21,6 @@ const client = new GprcAuthService(
   `localhost:4000`,
   grpc.credentials.createInsecure()
 );
+
 
 module.exports = client;

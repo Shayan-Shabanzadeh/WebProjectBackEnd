@@ -5,7 +5,7 @@ const PurchaseDto = require("../dto/PurchaseDto");
 class PurchaseRepository {
   findPurchaseById = async (corresponding_user_id) => {
     try {
-      const result = await Purchase.findOne({
+      const result = await Purchase.findAll({
         where: { corresponding_user_id: corresponding_user_id },
       });
       if (result === null) {
