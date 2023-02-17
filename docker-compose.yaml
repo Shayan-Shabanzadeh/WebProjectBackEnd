@@ -1,0 +1,102 @@
+version: "3"
+
+volumes:
+  db:
+    driver: local
+
+services:
+
+  ticket-service-db:
+    container_name: ticket-service-db
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Re@901438
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5438:5432'
+    volumes:
+      # - ./postgres-data:/var/lib/postgresql/data
+      - ./ticketService/utils/ticket.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    networks:
+      default:
+        aliases:
+          - ticket-service-db
+
+  user-service-db:
+    container_name: user-service-db
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Re@901438
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5437:5432'
+    networks:
+      default:
+        aliases:
+          - user-service-db
+  front:
+    container_name: front
+    restart: on-failure
+    build:
+      context: ./frontend
+    networks:
+      default:
+        aliases:
+          - frontend
+  ticket-service:
+    container_name: ticket-service
+    restart: on-failure
+    build:
+      context: ./ticketService
+    volumes:
+      - ./ticketService/.env:/usr/src/app/ticketService/.env
+    networks:
+      default:
+        aliases:
+          - ticket-service
+    depends_on:
+      - ticket-service-db
+
+  user-service:
+    container_name: user-service
+    restart: on-failure
+    build:
+      context: ./userService
+    volumes:
+      - ./userService/.env:/usr/src/goapp/userService/.env
+    networks:
+      default:
+        aliases:
+          - user-service
+    depends_on:
+      - user-service-db
+
+  bank-service:
+    container_name: bank-service
+    restart: on-failure
+    build:
+      context: ./Bank
+    ports:
+      - '9321:9321'
+    networks:
+      default:
+        aliases:
+          - bank-service
+
+  nginx:
+    container_name: nginx
+    restart: on-failure
+    build:
+      context: ./nginx
+    ports:
+      - "9090:9050"
